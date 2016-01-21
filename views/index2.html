@@ -1,0 +1,183 @@
+extends layout
+
+block content
+ // Modal
+ #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+   .modal-dialog(role='document')
+     .modal-content
+       .modal-header
+         button.close(type='button', data-dismiss='modal', aria-label='Close')
+           span(aria-hidden='true') ×
+         h4#myModalLabel.modal-title Modal title
+       .modal-body
+         | ...
+       .modal-footer
+         button.btn.btn-default(type='button', data-dismiss='modal') Close
+         button.btn.btn-primary(type='button') Save changes
+
+ nav.navbar.navbar-default.navbar-static-top
+   .container
+     .navbar-header
+       button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+         span.sr-only Toggle navigation
+         span.icon-bar
+         span.icon-bar
+         span.icon-bar
+       a.navbar-brand(href='http://getbootstrap.com/examples/carousel/#') Qolart
+     #navbar.navbar-collapse.collapse
+       ul.nav.navbar-nav
+         li.dropdown
+           a.dropdown-toggle(href='http://getbootstrap.com/examples/carousel/#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+             | Категория 
+             span.caret
+           ul.dropdown-menu
+             li
+               a(href='http://getbootstrap.com/examples/carousel/#') Action
+             li
+               a(href='http://getbootstrap.com/examples/carousel/#') Another action
+             li
+               a(href='http://getbootstrap.com/examples/carousel/#') Something else here
+             li.divider(role='separator')
+             li.dropdown-header Nav header
+             li
+               a(href='http://getbootstrap.com/examples/carousel/#') Separated link
+             li
+               a(href='http://getbootstrap.com/examples/carousel/#') One more separated link
+       form.navbar-form.navbar-left(role='search')
+         .form-group
+           input.form-control(type='text', placeholder='Search')
+         button.btn.btn-default(type='submit') Найти
+       ul.nav.navbar-nav.navbar-right
+         if (!user)
+           li
+             a(href='/register' data-toggle='modal', data-target='#myModal') Зарегестрироваться
+           li
+             a(href='/login' data-toggle='modal', data-target='#myModal') Войти
+         if (user)
+           li.dropdown
+             a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+               | #{user.username}
+               span.caret
+             ul.dropdown-menu
+               li
+                 a(href='#') Профиль
+               li
+                 a(href='#') Сообщения
+               li
+                 a(href='#') Покупки и отзывы
+               li
+                 a(href='#') Настройки
+               li.divider(role='separator')
+               li
+                 a(href='/logout') Выход
+ #myCarousel.carousel.slide(data-ride='carousel')
+       // Indicators
+       ol.carousel-indicators
+         li(data-target='#myCarousel', data-slide-to='0')
+         li.active(data-target='#myCarousel', data-slide-to='1')
+         li(data-target='#myCarousel', data-slide-to='2')
+       .carousel-inner(role='listbox')
+         .item
+           img.first-slide(src='/images/kaz kulture (11).jpg', alt='First slide')
+           .container
+             .carousel-caption
+               h1 Концептуальные продукты. Магазин авторского дизайна
+               p
+                 | Первая в Казахстане площадка изделий ручной работы и авторского дизайна
+                 |  Приобретай товары уникального отечественного производителя
+               p
+                 a.btn.btn-lg.btn-primary(href='/register', role='button') Регистрация!
+         .item.active
+           img.second-slide(src='/images/tamila 1.jpg', alt='Second slide')
+           .container
+             .carousel-caption
+               h1 Первый месяц бесплатно!
+               p
+                 Мы развиваем отечественное производство! Открой свой магазин! И получи первый месяц продажи бесплатно!
+               p
+                 a.btn.btn-lg.btn-primary(href='/loginshop', role='button') Открытъ магазин
+         .item
+           img.third-slide(src='/images/expshop_slider.jpg', alt='Third slide')
+           .container
+             .carousel-caption
+               h1 One more for good measure.
+               p
+                 | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+               p
+                 a.btn.btn-lg.btn-primary(href='http://getbootstrap.com/examples/carousel/#', role='button') Browse gallery
+       a.left.carousel-control(href='http://getbootstrap.com/examples/carousel/#myCarousel', role='button', data-slide='prev')
+         span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+         span.sr-only Previous
+       a.right.carousel-control(href='http://getbootstrap.com/examples/carousel/#myCarousel', role='button', data-slide='next')
+         span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+         span.sr-only Next
+ .container.marketing
+       // Three columns of text below the carousel
+       .row
+         .col-lg-4
+           img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
+           h2 Heading
+           p
+             | Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+           p
+             a.btn.btn-default(href='http://getbootstrap.com/examples/carousel/#', role='button') View details »
+         // /.col-lg-4
+         .col-lg-4
+           img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
+           h2 Heading
+           p
+             | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+           p
+             a.btn.btn-default(href='http://getbootstrap.com/examples/carousel/#', role='button') View details »
+         // /.col-lg-4
+         .col-lg-4
+           img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
+           h2 Heading
+           p
+             | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+           p
+             a.btn.btn-default(href='http://getbootstrap.com/examples/carousel/#', role='button') View details »
+         // /.col-lg-4
+       // /.row
+       // START THE FEATURETTES
+       hr.featurette-divider
+       .row.featurette
+         .col-md-7
+           h2.featurette-heading
+             | First featurette heading. 
+             span.text-muted It'll blow your mind.
+           p.lead
+             | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+         .col-md-5
+           img.featurette-image.img-responsive.center-block(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+       hr.featurette-divider
+       .row.featurette
+         .col-md-7.col-md-push-5
+           h2.featurette-heading
+             | Oh yeah, it's that good. 
+             span.text-muted See for yourself.
+           p.lead
+             | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+         .col-md-5.col-md-pull-7
+           img.featurette-image.img-responsive.center-block(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+       hr.featurette-divider
+       .row.featurette
+         .col-md-7
+           h2.featurette-heading
+             | And lastly, this one. 
+             span.text-muted Checkmate.
+           p.lead
+             | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+         .col-md-5
+           img.featurette-image.img-responsive.center-block(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+       hr.featurette-divider
+       // /END THE FEATURETTES
+       // FOOTER
+       footer
+         p.pull-right
+           a(href='http://getbootstrap.com/examples/carousel/#') Back to top
+         p
+           | © 2015 QolArt, Inc. · 
+           a(href='http://getbootstrap.com/examples/carousel/#') Privacy
+           |  · 
+           a(href='http://getbootstrap.com/examples/carousel/#') Terms

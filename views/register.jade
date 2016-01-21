@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .container
+    h1 Register Page
+    form(role='form', action="/register",method="post", style='max-width: 300px;')
+      .form-group
+          input.form-control(type='text', name="fname", placeholder='First Name')
+      .form-group
+          input.form-control(type='text', name="mname", placeholder='Middle Name')
+      .form-group
+          input.form-control(type='text', name="lname", placeholder='Last Name')
+      .form-group
+        input.form-control(type='email', name="email", placeholder='Email')
+      .form-group
+        input.form-control(type='password', name="password", placeholder='Password')
+      .form-group
+        input.form-control(type='password', name="conf_password", placeholder='Confirm Password')
+      .btn-group.btn-group-justified(role='group', aria-label='...')
+        .btn-group(role='group')
+          button.btn.btn-primary(type='submit') Register

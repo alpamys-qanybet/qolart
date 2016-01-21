@@ -1,0 +1,45 @@
+extends layout
+
+block content
+    ul#singUp.nav.nav-tabs(role='tablist')
+      li(role='presentation')
+        a(href='#register', aria-controls='register', role='tab', data-toggle='tab') Register
+      li.active(role='presentation')
+        a(href='#login', aria-controls='login', role='tab', data-toggle='tab') Sign in
+    .tab-content
+      #login.tab-pane.active(role='tabpanel')
+        form(role='form', action="/login",method="post", style='max-width: 300px;')
+          .form-group
+              input.form-control(type='email', name="email", placeholder='Enter Email')
+          .form-group
+            input.form-control(type='password', name="password", placeholder='Password')
+          .btn-group.btn-group-justified(role='group', aria-label='...')
+            .btn-group(role='group')
+              button.btn.btn-primary(type='submit') Login          
+        a.btn.btn-primary.btn(href='/auth/facebook', role='button')
+          span.glyphicon.glyphicon-user
+          |  Sign in with Facebook
+        a.btn.btn-info.btn(href='/auth/vkontakte', role='button')
+          span.glyphicon.glyphicon-user
+          |  Sign in with VK
+        a.btn.btn-danger.btn(href='/auth/google', role='button')
+          span.glyphicon.glyphicon-user
+          |  Sign in with Google
+      #register.tab-pane(role='tabpanel')
+        form(role='form', action="/register",method="post", style='max-width: 300px;')
+          .form-group
+              input.form-control(type='text', name="fname", placeholder='First Name')
+          .form-group
+              input.form-control(type='text', name="mname", placeholder='Middle Name')
+          .form-group
+              input.form-control(type='text', name="lname", placeholder='Last Name')
+          .form-group
+            input.form-control(type='email', name="email", placeholder='Email')
+          .form-group
+            input.form-control(type='password', name="password", placeholder='Password')
+          .form-group
+            input.form-control(type='password', name="conf_password", placeholder='Confirm Password')
+          .btn-group.btn-group-justified(role='group', aria-label='...')
+            .btn-group(role='group')
+              button.btn.btn-primary(type='submit') Register    
+          
