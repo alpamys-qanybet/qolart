@@ -24,7 +24,6 @@ coverage
 build/Release
 
 # Dependency directory
-<<<<<<< HEAD
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
 
@@ -39,4 +38,6 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
->>>>>>> 390c468a1f31911b6f1f2a42808518815261d88e
+
+# Setup.sh might be different for every user
+setup.sh
