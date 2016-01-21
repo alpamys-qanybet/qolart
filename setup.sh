@@ -1,19 +1,3 @@
-Skip to content
-This repository  
-Search
-Pull requests
-Issues
-Gist
- @arasalt
- Unwatch 1
-  Star 0
- Fork 0 arasalt/qolart
- Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs  Settings
-Branch: master Find file Copy pathqolart/setup.sh
-5fa7bd2  a minute ago
-@arasalt arasalt Update setup.sh
-1 contributor
-RawBlameHistory     60 lines (49 sloc)  2.16 KB
 #!/bin/bash
 
 #Install latest node version
