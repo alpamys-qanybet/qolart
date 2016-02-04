@@ -15,6 +15,8 @@ var sessions = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var items=require('./routes/items');
+var cats=require('./routes/categories');
+
 
 var app = express();
 
@@ -66,8 +68,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/items', items);
-
+app.use('/api/items', items);
+app.use('/api/categories', cats);
 
 //mongoose connection
 var configDB = require('./config/database.js');

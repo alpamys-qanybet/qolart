@@ -1,12 +1,5 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var Category= mongoose.Schema({
-	name:String,
-	path:{type:String, index:true},
-	count:Number,
-	facets:{type:[String]}
-});
-module.exports = mongoose.model('categories', Category);
 var Item = mongoose.Schema({
 	title: String,
 	master:{
@@ -38,7 +31,7 @@ var Item = mongoose.Schema({
 	},
 	quant: Number, 
 	details: [Schema.Types.Mixed],
-	cat:{type:[Schema.Types.ObjectId], ref:'categories', index:true},
+	cat:{type:[String], index:true},
 	meta:{
 		views: Number,
 		favs: Number,
