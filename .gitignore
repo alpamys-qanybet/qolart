@@ -4,7 +4,7 @@ logs
 npm-debug.log*
 
 #Application keys for social oauth
-config/oauth.js
+#config/oauth.js
 
 # Runtime data
 pids
