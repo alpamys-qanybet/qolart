@@ -6,6 +6,8 @@ head
   meta(name='description', content='Qolart online shop of handmade goods')
   meta(name='author', content='Saltanat Tazhibayeva')
   title Qolart
+  script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js')
+  script(src='/javascripts/app.js')
   // Bootstrap core CSS
   link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', rel='stylesheet', media='screen')
   link(rel='stylesheet', href='/stylesheets/style.css' media='screen')
@@ -19,7 +21,7 @@ head
   link(href='/stylesheets/carousel.css', rel='stylesheet')
   style(type='text/css').
 
-  body
+  body(ng-app='artCrafts', ng-controller='StoreController')
     block content
   script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
   script(src='/javascripts/main.js')
